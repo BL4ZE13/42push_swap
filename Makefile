@@ -6,7 +6,7 @@
 #    By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 13:10:41 by diomarti          #+#    #+#              #
-#    Updated: 2023/01/19 14:01:53 by diomarti         ###   ########.fr        #
+#    Updated: 2023/01/19 16:46:20 by diomarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,17 @@ SRCS_PATH	= ./utils
 OBJ_PATH	= ./objects
 
 SRCS_NAME	= move_sa.c\
+			move_sb.c\
+			move_ss.c\
+			move_pa.c\
+			move_pb.c\
+			move_ra.c\
+			move_rb.c\
+			move_rr.c\
+			move_rra.c\
+			move_rrb.c\
+			move_rrr.c\
+			
 
 OBJS	= $(addprefix $(OBJ_PATH)/, $(SRCS_NAME:.c=.o))
 SRCS	= $(addprefix $(SRCS_PATH)/, $(SRCS_NAME))

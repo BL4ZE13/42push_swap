@@ -1,13 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_sa.c                                          :+:      :+:    :+:   */
+/*   move_ra.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:29:00 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/19 16:31:22 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/19 16:28:23 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/19 16:37:07 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*trocar o 1 e 2 elemento do A*/
+/*tds sobem uma posicao, quem ta em primerio passa para ultimo (coluna A)*/
