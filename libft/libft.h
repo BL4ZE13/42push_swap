@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomari <diomarti@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:19:20 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/09 16:00:40 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:37:18 by diomari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 //Part1
 size_t	ft_strlen(const char *s);
 
-int		ft_atoi(const char *str);
+long long		ft_atoi(const char *str);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
