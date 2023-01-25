@@ -103,4 +103,3 @@ int	check_all(int argc, char **argv)
 		exit(write(2, "Error\n", 6));
 	return (1);	
 }
-
