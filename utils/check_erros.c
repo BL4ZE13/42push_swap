@@ -103,9 +103,3 @@ int	check_all(int argc, char **argv)
 		exit(write(2, "Error\n", 6));
 	return (1);	
 }
-
-int main(int argc, char **argv)
-{
-	printf("%d", check_all(argc, argv));
-	
-}
