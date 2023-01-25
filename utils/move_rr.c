@@ -1,13 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_rr.c                                          :+:      :+:    :+:   */
+/*   move_rra.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:28:10 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/19 16:38:00 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/19 16:28:07 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/19 16:40:02 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*tds sobem uma posicao, quem ta em primerio passa para ultimo (coluna A e B ao mm tempo)*/
+/*tds descem uma posicao, quem ta em ultimo passa para primeiro (coluna A)*/
+#include "../includes/push_swap.h"
+
+void	m_rra(t_stack *s)
+{
+
+
+}
+
+void	m_rrb(t_stack *s)
+{
+
+
+}
+
+void	m_rrr(t_stack *s)
+{
+
+
+}
