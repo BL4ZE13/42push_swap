@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:19:16 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/09 15:57:54 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/30 16:51:37 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:55:30 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void	ft_lstclear(t_list **lst, void (*del) (void *))
+void	print_lst(t_list **stack)
 {
-	t_list	*lst1;
+	t_list *tmp = *stack;
 
-	if (!*lst || !lst)
-		return ;
-	while (*lst)
+	while (tmp)
 	{
-		lst1 = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = lst1;
+		ft_printf("%d\n", tmp->content);
+		tmp = tmp->next;
 	}
-	lst = 0;
 }
-
-/*vai dar free a lista*/

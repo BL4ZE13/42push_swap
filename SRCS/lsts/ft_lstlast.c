@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:12:40 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/09 15:58:14 by diomarti         ###   ########.fr       */
+/*   Created: 2022/11/07 15:35:02 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:50:56 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new_node)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !new_node)
-		return ;
-	if (*lst != NULL)
-		new_node->next = *lst;
-	*lst = new_node;
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
-
-/**/

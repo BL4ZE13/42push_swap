@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:46:10 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/29 12:07:34 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:57:08 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (len);
-}
-
-int main()
-{
-	ft_printf("%x\n", LONG_MAX);
-	printf("%lx\n", LONG_MAX);
 }

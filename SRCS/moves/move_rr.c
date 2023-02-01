@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   move_rr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:20:20 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/09 13:42:31 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/19 16:28:07 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:51:57 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*tds descem uma posicao, quem ta em ultimo passa para primeiro (coluna A)*/
+#include "../../push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new_node)
+/* void	m_rra(t_list *s)
 {
-	t_list	*last_node;
 
-	last_node = ft_lstlast(*lst);
-	if (!lst || !new_node)
-		return ;
-	if (!*lst)
-	{
-		*lst = new_node;
-		return ;
-	}
-	last_node->next = new_node;
+
 }
+
+void	m_rrb(t_list *s)
+{
+
+
+}
+
+void	m_rrr(t_list *s)
+{
+
+
+}
+ */

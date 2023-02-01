@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_ra.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:28:23 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/19 16:37:07 by diomarti         ###   ########.fr       */
+/*   Created: 2022/11/07 16:19:16 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:50:51 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*tds sobem uma posicao, quem ta em primerio passa para ultimo (coluna A)*/
-#include "../includes/push_swap.h"
+#include "../../push_swap.h"
 
-void	m_ra(t_stack *s)
+void	ft_lstclear(t_list **lst)
 {
+	t_list	*lst1;
 
-
-}
-
-void	m_rb(t_stack *s)
-{
-
-
-}
-
-void	m_rr(t_stack *s)
-{
-
-
+	if (!*lst || !lst)
+		return ;
+	while (*lst)
+	{
+		lst1 = (*lst)->next;
+		free(*lst);
+		*lst = lst1;
+	}
 }

@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   move_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:35:02 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/09 15:55:26 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/19 16:29:00 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:52:05 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*trocar o 1 e 2 elemento do A*/
+#include "../../push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+/* void	m_sa(t_list *s)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+
+
 }
 
-/*ultimo elemento da lista mandada*/
+void	m_sb(t_list *s)
+{
+
+
+
+}
+
+void	m_ss(t_list *s)
+{
+
+
+
+}
+ */
+
+

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:01:31 by diomarti          #+#    #+#             */
-/*   Updated: 2022/11/09 15:52:55 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/30 16:42:25 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/30 17:18:18 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+int main(int argc, char **argv)
 {
-	t_list	*new_node;
-
-	new_node = malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	t_list *a;
+	//t_list *b;
+	int i;
+	(void)argc;
+	
+	a = NULL;
+	i = 0;
+	while (argv[i++])
+		ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
+	//b = NULL;
+	print_lst(&a);
 }
+

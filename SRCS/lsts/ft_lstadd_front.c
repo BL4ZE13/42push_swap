@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_sa.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:29:00 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/19 16:31:22 by diomarti         ###   ########.fr       */
+/*   Created: 2022/11/07 15:12:40 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:50:45 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*trocar o 1 e 2 elemento do A*/
-#include "../includes/push_swap.h"
+#include "../../push_swap.h"
 
-void	m_sa(t_stack *s)
+int	ft_lstadd_front(t_list **lst, t_list *new_node)
 {
-
-
+	if (!lst || !new_node)
+		return (0);
+	new_node->next = *lst;
+	*lst = new_node;
+	return (1);
 }
-
-void	m_sb(t_stack *s)
-{
-
-
-
-}
-
-void	m_ss(t_stack *s)
-{
-
-
-
-}
-
-
-

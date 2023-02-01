@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_pa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:28:28 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/19 16:35:41 by diomarti         ###   ########.fr       */
+/*   Created: 2022/11/07 15:01:31 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:51:02 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*o 1 elemento do B passa para o topo do A*/
-#include "../includes/push_swap.h"
+#include "../../push_swap.h"
 
-void	m_pa(t_stack *s)
+t_list	*ft_lstnew(int content)
 {
-	
+	t_list	*new_node;
 
-}
-
-void	m_pb(t_stack *s)
-{
-
-
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

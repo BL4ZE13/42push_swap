@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_rra.c                                         :+:      :+:    :+:   */
+/*   move_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 16:28:07 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/19 16:40:02 by diomarti         ###   ########.fr       */
+/*   Created: 2023/01/19 16:28:28 by diomarti          #+#    #+#             */
+/*   Updated: 2023/01/31 16:51:35 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*tds descem uma posicao, quem ta em ultimo passa para primeiro (coluna A)*/
-#include "../includes/push_swap.h"
+/*o 1 elemento do B passa para o topo do A*/
+#include "../../push_swap.h"
 
-void	m_rra(t_stack *s)
+/* void	m_pa(t_list *s)
+{
+	
+
+}
+
+void	m_pb(t_list *s)
 {
 
 
 }
-
-void	m_rrb(t_stack *s)
-{
-
-
-}
-
-void	m_rrr(t_stack *s)
-{
-
-
-}
+ */
