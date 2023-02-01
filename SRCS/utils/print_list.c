@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:51:37 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/31 16:55:30 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/01 15:26:14 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	print_lst(t_list **stack)
 {
-	t_list *tmp = *stack;
+	t_list	*cursor;
 
-	while (tmp)
+	cursor = *stack;
+	while (cursor)
 	{
-		ft_printf("%d\n", tmp->content);
-		tmp = tmp->next;
+		ft_printf("%d, ", cursor->content);
+		// ft_printf("%i\n", cursor->content);
+		cursor = cursor->next;
 	}
 }

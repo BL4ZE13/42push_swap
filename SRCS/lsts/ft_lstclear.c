@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:19:16 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/31 16:50:51 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:36:41 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	ft_lstclear(t_list **lst)
 		free(*lst);
 		*lst = lst1;
 	}
+	free(lst1);
 }

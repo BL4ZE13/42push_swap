@@ -6,13 +6,13 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:43:04 by diomarti          #+#    #+#             */
-/*   Updated: 2023/01/31 16:48:24 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:33:36 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	int	i;
 	int	signal;
