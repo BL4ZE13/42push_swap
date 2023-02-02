@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:13:08 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/01 16:57:47 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:13:54 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ typedef struct s_list
 void		m_swap(t_list **s, int i);
 void		m_ss(t_list **la, t_list **lb, int i);
 void		m_push(t_list **src, t_list **dest, int i);
-void		m_ra(t_list *s);
-void		m_rb(t_list *s);
-void		m_rr(t_list *s);
-void		m_rra(t_list *s);
-void		m_rrb(t_list *s);
-void		m_rrr(t_list *s);
+void		m_rotate(t_list **s, int i);
+void		m_rr(t_list **lst_a, t_list **lst_b, int i);
+void		m_rev_rotate(t_list **s, int i);
+void		m_rrr(t_list **lst_a, t_list **lst_b, int i);
 long long	ft_atoi(const char *str);
 void		print_lst(t_list **stack);
 

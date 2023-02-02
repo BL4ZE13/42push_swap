@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:42:25 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/01 17:20:16 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:26:33 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main(int argc, char **argv)
 	while (++i < argc)
 	{
 		ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
-		// ft_lstadd_back(&b, ft_lstnew(ft_atoi(argv[i])));
 	}
 	ft_printf("A: ");
 	print_lst(&a);
@@ -33,6 +32,14 @@ int main(int argc, char **argv)
 	ft_printf("\n/////////\n");
 	m_push(&a, &b, 1);
 	m_push(&a, &b, 1);
+	m_ss(&a, &b, 2);
+	m_push(&a, &b, 1);
+	m_swap(&a, 0);
+	m_rev_rotate(&b, 1);
+	m_push(&b, &a, 0);
+	m_rev_rotate(&b, 1);
+	m_push(&b, &a, 0);
+	m_push(&b, &a, 0);
 	ft_printf("A: ");
 	print_lst(&a);
 	ft_printf("B: ");
