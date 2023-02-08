@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:13:08 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/02 16:13:54 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:58:58 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,11 @@ void	ft_lstclear(t_list **lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 
+//alg2
+void	alg_2(t_list **a);
+
+//alg3
+int		ft_case(t_list *s);
+void	ft_choose_case(t_list **a);
 
 #	endif
