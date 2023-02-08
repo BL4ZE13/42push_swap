@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 12:43:04 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/08 17:33:23 by diomarti         ###   ########.fr       */
+/*   Created: 2022/11/07 15:28:32 by diomarti          #+#    #+#             */
+/*   Updated: 2023/02/08 16:05:10 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-long long	ft_atoi(const char *str)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	int	signal;
-	long long	result;
 
 	i = 0;
-	signal = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
+	if (!lst)
+		return (0);
+	while (lst != NULL)
 	{
-		signal = -1;
+		lst = lst->next;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
-	{
-		result *= 10;
-		result += str[i] - 48;
-		i++;
-	}
-	return (result * signal);
+	return (i);
 }
+
+/*tamanho da lista*/

@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:13:08 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/07 19:58:58 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:24:40 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,36 @@ void		m_rev_rotate(t_list **s, int i);
 void		m_rrr(t_list **lst_a, t_list **lst_b, int i);
 long long	ft_atoi(const char *str);
 void		print_lst(t_list **stack);
+t_list		*ft_small(t_list **s);
+void		put_list(t_list **s, int argc, char **argv);
 
 //errors
-int check_dup(int argc, char **argv);
-int	check_valid(int argc, char **argv);
-int check_digit(int argc, char **argv);
-int	check_signal(int argc, char **argv);
-int	check_all(int argc, char **argv);
+int			check_dup(int argc, char **argv);
+int			check_valid(int argc, char **argv);
+int 		check_digit(int argc, char **argv);
+int			check_signal(int argc, char **argv);
+int			check_all(int argc, char **argv);
 
 
 //lst
-void	ft_lstadd_back(t_list **lst, t_list *new_node);
-int		ft_lstadd_front(t_list **lst, t_list *new_node);
-void	ft_lstclear(t_list **lst);
-t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(int content);
+void		ft_lstadd_back(t_list **lst, t_list *new_node);
+int			ft_lstadd_front(t_list **lst, t_list *new_node);
+void		ft_lstclear(t_list **lst);
+t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstnew(int content);
+int			ft_lstsize(t_list *lst);
 
 //alg2
-void	alg_2(t_list **a);
+void		alg_2(t_list **a);
 
 //alg3
-int		ft_case(t_list *s);
-void	ft_choose_case(t_list **a);
+int			ft_case(t_list *s);
+void		alg_3(t_list **a);
+
+//alg5
+int			is_sort(t_list **a);
+int			find_smaller(t_list **a);
+void		do_push(t_list **a, t_list **b, int c, int n);
+void		alg_5(t_list **a, t_list **b);
 
 #	endif

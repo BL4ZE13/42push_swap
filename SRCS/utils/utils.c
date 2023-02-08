@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 12:43:04 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/08 17:33:23 by diomarti         ###   ########.fr       */
+/*   Created: 2023/02/08 11:47:23 by diomarti          #+#    #+#             */
+/*   Updated: 2023/02/08 12:38:14 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-long long	ft_atoi(const char *str)
+t_list	*ft_small(t_list **s)
 {
-	int	i;
-	int	signal;
-	long long	result;
+	t_list	*cursor;
+	t_list	*smaller;
 
-	i = 0;
-	signal = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
+	cursor = *s;
+	smaller = cursor;
+	while (cursor)
 	{
-		signal = -1;
-		i++;
+		if (cursor->content < smaller->content)
+			smaller = cursor;
+		cursor = cursor->next;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
-	{
-		result *= 10;
-		result += str[i] - 48;
-		i++;
-	}
-	return (result * signal);
+	return (smaller);	
 }

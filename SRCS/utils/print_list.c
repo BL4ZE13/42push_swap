@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:51:37 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/01 15:26:14 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:44:07 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	print_lst(t_list **stack)
 		// ft_printf("%i\n", cursor->content);
 		cursor = cursor->next;
 	}
+	
 }

@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 19:21:31 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/07 20:02:55 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:09:40 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_case(t_list *s)
 		return (0);
 }
 
-void	ft_choose_case(t_list **a)
+void	alg_3(t_list **a)
 {
 	t_list	*cursor;
 	int	c;

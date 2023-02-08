@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 18:20:56 by diomari           #+#    #+#             */
-/*   Updated: 2023/01/31 16:48:11 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:19:09 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,22 +70,22 @@ int check_digit(int argc, char **argv)
 
 int	check_signal(int argc, char **argv)
 {
-	int i;
-	int j;
-	int h;
+	int	i;
+	int	j;
 
 	i = 1;
-	j = 1;
-	while (i < argc)
+	(void)argc;
+	while (argv[i])
 	{
-		h = 0;
-		if (argv[i][j] == '-')
+		j = 0;
+		if (argv[i][j] == '-' || argv[i][j] == '+')
+			j++;
+		while (argv[i][j])
 		{
-			h += 1;
-			if (argv[j][h] < '0' || argv[j][h] > '9')
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 				exit(write(2, "Error\n", 6));
+			j++;
 		}
-		j++;
 		i++;
 	}
 	return (1);
