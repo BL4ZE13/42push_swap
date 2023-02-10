@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomari <diomarti@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:13:08 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/08 16:24:40 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/10 22:37:52 by diomari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ long long	ft_atoi(const char *str);
 void		print_lst(t_list **stack);
 t_list		*ft_small(t_list **s);
 void		put_list(t_list **s, int argc, char **argv);
+void		call_case(t_list **a, t_list **b, int argc);
 
 //errors
 int			check_dup(int argc, char **argv);

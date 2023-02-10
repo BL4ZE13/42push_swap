@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomari <diomarti@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:42:25 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/08 17:16:20 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/02/10 22:42:05 by diomari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,19 @@ void	put_list(t_list **s, int argc, char **argv)
 	}
 }
 
-/* void	call_case(t_list **a, t_list **b, int argc)
+void	call_case(t_list **a, t_list **b, int argc)
 {
 	if (argc == 3)
 		alg_2(a);
 	if (argc == 4)
 		alg_3(a);
+	if (argc == 5 || argc == 6)
+		alg_5(a, b);
 
 
 	
 }	
- */
+
 
 int main(int argc, char **argv)
 {
@@ -46,10 +48,11 @@ int main(int argc, char **argv)
 	put_list(&a, argc, argv);
 	ft_printf("A: ");
 	print_lst(&a);
-	ft_printf("B: ");
+	ft_printf("\nB: ");
 	print_lst(&b);
-	ft_printf("\n/////////\n");
-	alg_5(&a, &b);
+	ft_printf("\n////////////////////////////////\n");
+	call_case(&a, &b, argc);
+	ft_printf("////////////////////////////////\n");
 	ft_printf("A: ");
 	print_lst(&a);
 	ft_printf("\nB: ");
