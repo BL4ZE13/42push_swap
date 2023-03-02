@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 12:43:04 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/27 15:18:17 by diomarti         ###   ########.fr       */
+/*   Created: 2021/10/20 14:20:17 by lucas-ma          #+#    #+#             */
+/*   Updated: 2023/02/24 16:14:56 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-long long	ft_atoi(const char *str)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	signal;
-	long long	result;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 
-	i = 0;
-	signal = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	if (!n)
+		return (0);
+	while (n > 1 && *ptr1 && *ptr2 && (*ptr1 == *ptr2))
 	{
-		signal = -1;
-		i++;
+		ptr1++;
+		ptr2++;
+		n--;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
-	{
-		result *= 10;
-		result += str[i] - 48;
-		i++;
-	}
-	return (result * signal);
+	return (*ptr1 - *ptr2);
 }

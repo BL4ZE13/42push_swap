@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 12:43:04 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/27 15:18:17 by diomarti         ###   ########.fr       */
+/*   Created: 2022/10/24 12:44:58 by diomarti          #+#    #+#             */
+/*   Updated: 2023/02/16 12:25:15 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-long long	ft_atoi(const char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-	int	signal;
-	long long	result;
-
-	i = 0;
-	signal = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
-	{
-		signal = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
-	{
-		result *= 10;
-		result += str[i] - 48;
-		i++;
-	}
-	return (result * signal);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

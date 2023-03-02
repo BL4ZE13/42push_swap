@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_list.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 16:51:37 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/22 16:29:24 by diomarti         ###   ########.fr       */
+/*   Created: 2022/11/25 14:53:13 by diomarti          #+#    #+#             */
+/*   Updated: 2022/12/05 11:50:48 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	print_lst(t_list **stack)
-{
-	t_list	*cursor;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-	cursor = *stack;
-	while (cursor)
-	{
-		ft_printf("%d, ", cursor->content);
-		cursor = cursor->next;
-	}
-}
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <fcntl.h>
+
+char	*get_next_line(int fd);
+
+int		ft_strlen(char *str);
+
+char	*ft_strjoin(char *str1, char *str2);
+
+int		ft_clear(char *str);
+
+#endif

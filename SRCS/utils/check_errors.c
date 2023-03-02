@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 18:20:56 by diomari           #+#    #+#             */
-/*   Updated: 2023/02/08 17:19:09 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/02 13:26:04 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int check_dup(int argc, char **argv)
 	int	i;
 	int	j;
 	
-	i = 0;
+	i = 1;
 	while (i < argc)
 	{
 		j = i + 1;
@@ -37,33 +37,11 @@ int	check_valid(int argc, char **argv)
 	int	i;
 
 	i = 1;
-	if (argc == 1)
-		exit(write(2, "Error\n", 6));
 	while (i < argc)
 	{
 		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
 			exit(write(2, "Error\n", 6));
 		i++;		
-	}
-	return (1);
-}
-
-int check_digit(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-				exit(write(2, "Error\n", 6));
-			j++;
-		}
-		i++;
 	}
 	return (1);
 }
@@ -74,17 +52,15 @@ int	check_signal(int argc, char **argv)
 	int	j;
 
 	i = 1;
-	(void)argc;
-	while (argv[i])
+	while (i < argc)
 	{
 		j = 0;
-		if (argv[i][j] == '-' || argv[i][j] == '+')
-			j++;
 		while (argv[i][j])
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			if (!((ft_isdigit(argv[i][j]))
+				|| (argv[i][0] == '-' && ft_isdigit(argv[i][1]))))
 				exit(write(2, "Error\n", 6));
-			j++;
+			j++;			
 		}
 		i++;
 	}
@@ -93,13 +69,11 @@ int	check_signal(int argc, char **argv)
 
 int	check_all(int argc, char **argv)
 {
+	if (check_dup(argc, argv) != 1)
+		exit(write(2, "Error\n", 6));
+	if (check_valid(argc, argv) != 1)
+		exit(write(2, "Error\n", 6));
 	if (check_signal(argc, argv) != 1)
-		exit(write(2, "Error\n", 6));
-	else if (check_digit(argc, argv) != 1)
-		exit(write(2, "Error\n", 6));
-	else if (check_valid(argc, argv) != 1)
-		exit(write(2, "Error\n", 6));
-	else if (check_dup(argc, argv) != 1)
 		exit(write(2, "Error\n", 6));
 	return (1);	
 }
