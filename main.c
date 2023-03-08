@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:42:25 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/02 13:27:04 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/08 01:24:14 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ void	call_case(t_list **a, t_list **b, int argc)
 		alg_3(a);
 	if (argc == 5 || argc == 6)
 		alg_5(a, b);
-	else
-		alg_100(a, b, argc);
+	if (argc > 6 && argc < 501)
+		alg_100(a, b);
 }	
-
 
 int main(int argc, char **argv)
 {
@@ -46,6 +45,7 @@ int main(int argc, char **argv)
 	if (check_all(argc, argv) != 1 || argc < 3)
 		return (0);
 	put_list(&a, argc, argv);
+	get_index(&a);
 	// ft_printf("A: ");
 	// print_lst(&a);
 	// ft_printf("\nB: ");
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 	// ft_printf("\nB: ");
 	// print_lst(&b);
 	// ft_printf("\n");
-	//ft_printf("Is sorted: ");
+	// ft_printf("Is sorted: ");
 	// if (is_sort(&a))
 	// 	ft_printf("OK\n");
 	// else

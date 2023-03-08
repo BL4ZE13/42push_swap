@@ -6,98 +6,76 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 11:47:23 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/22 16:45:54 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/08 01:32:36 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_list	*ft_small(t_list *s)
-{
-	t_list	*cursor;
-	t_list	*small;
-
-	cursor = s;
-	small = cursor;
-	while (cursor)
-	{
-		if (cursor->content < small->content)
-			small = cursor;
-		cursor = cursor->next;
-	}
-	return (small);
-}
-
-void inc_chunk(t_chunk *chunk, int *lst, int len, int o)
-{
-	if (o == 1)
-	{
-		chunk->i_min = 0;
-		chunk->i_max = len;
-	}
-	else
-	{
-		chunk->i_min += len;
-		chunk->i_max = chunk->i_min + len;
-	}
-	chunk->min_c = lst[chunk->i_min];
-	chunk->max_c = lst[chunk->i_max];	
-}
-
-int	exist_c(t_list **a, t_chunk c)
+void	get_index(t_list **a)
 {
 	t_list *cursor;
+	t_list *tmp;
 	
 	cursor = *a;
 	while (cursor)
 	{
-		if (cursor->content >= c.min_c && cursor->content <= c.max_c)
-			return (1);
+		cursor->index = 0;
+		tmp = *a;
+		while (tmp)
+		{
+			if(cursor != tmp && cursor->content > tmp->content)
+				cursor->index++;
+			tmp = tmp->next;
+		}
 		cursor = cursor->next;
 	}
-	return (0);
 }
 
-void	push_chunk(t_list **a, t_list **b, t_chunk c, int n)
+int	put_in_a(t_list **a, t_list **b, int *big, int index)
 {
-	if (*a)
+	if ((*a) && (*a)->next && (*a)->content > (*a)->next->content)
 	{
-		if ((*a)->content >= c.min_c
-			&& (*a)->content <= c.max_c)
-			m_push(a, b, 1);
-		else
-		{
-			if (n == 2)
-			{
-				m_push(a, b, 1);
-				m_rotate(b, 1);
-			}
-			else
-				m_rotate(a, 0);
-		}
+		m_swap(a, 0);
+		(*big)--;
+		index = check_index(b, *big);
 	}
+	else if ((check_index(b, ((*big) - 1)) == 0))
+	{
+		m_push(b, a, 0);
+		index = check_index(b, (*big));
+	}
+	else if (index == 2 && (check_index(b, ((*big) - 1)) == 0))
+	{
+		m_push(b ,a, 0);
+		(*big)--;
+		m_rotate(b, 1);
+		m_push(b, a, 0);
+		(*big)--;
+		m_swap(a, 0);
+		index = check_index(b, (*big));
+	}
+	index = put_in_a_2(a, b, big, index);
+	return (index);
 }
 
-t_list *best_to_do(t_list **a, t_list **b)
+int	put_in_a_2(t_list **a, t_list **b, int *big, int index)
 {
-	t_list *c;
-	t_list *index_c;
-	t_list *best;
-	t_list *index_best;
-
-	c = *b;
-	best = *b;
-	index_best = find_index(*a, best);
-	while (c)
+	if (index == 1 && (check_index(b, (*big) - 1)) == 0)
 	{
-		index_c = find_index(*a, c);
-		if (ft_cost(a, b, index_c, c)
-			< ft_cost(a, b, index_best, best))
-		{
-			best = c;
-			index_best = index_c;
-		}
-		c = c->next;
+		m_swap(b, 1);
+		index = check_index(b, (*big));
 	}
-	return (best);
+	else if (check_index(b, (*big)) == 0)
+	{
+		m_push(b, a, 0);
+		(*big)--;
+		index = check_index(b, (*big));
+	}
+	else
+	{
+		top_to_lst(b, index, 1);
+		index = check_index(b, (*big));
+	}
+	return (index);
 }
