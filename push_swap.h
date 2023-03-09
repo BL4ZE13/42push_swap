@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 13:13:08 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/08 01:29:31 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/09 23:32:21 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ void		m_rrr(t_list **lst_a, t_list **lst_b, int i);
 long long	ft_atoi(const char *str);
 void		print_lst(t_list **stack);
 void		put_list(t_list **s, int argc, char **argv);
-void		call_case(t_list **a, t_list **b, int argc);
+void		call_case(t_list **a, t_list **b, int agrc);
 int			ft_isdigit(int c);
 void		get_index(t_list **a);
+void		put_list(t_list **s, int argc, char **argv);
 
 
 
@@ -69,15 +70,18 @@ int			ft_lstsize(t_list *lst);
 //alg2
 void		alg_2(t_list **a);
 
+
 //alg3
 int			ft_case(t_list *s);
 void		alg_3(t_list **a);
+
 
 //alg5
 int			is_sort(t_list **a);
 int			find_smaller(t_list **a);
 void		do_push(t_list **a, t_list **b, int c, int n);
 void		alg_5(t_list **a, t_list **b);
+
 
 //alg100
 void		top_to_lst(t_list **s, int i, int o);
@@ -87,5 +91,20 @@ void		put_in_b(t_list **a, t_list **b, int size);
 int			put_in_a(t_list **a, t_list **b, int *big, int index);
 int			put_in_a_2(t_list **a, t_list **b, int *big, int index);
 void		alg_100(t_list **a, t_list **b);
+
+
+//alg500
+int 		check_pos(t_list **b, int big, int size);
+void		sort_to_a(t_list **a, t_list **b);
+void		alg_500(t_list **a, t_list **b);
+
+//bonus
+void		check_push(char *moves, t_list **a, t_list **b);
+void 		check_rot(char *moves, t_list **a, t_list **b);
+void		check_swap(char *moves, t_list **a, t_list **b);
+void		check_rev(char *moves, t_list **a, t_list **b);
+void		read_line(char *moves, t_list **a, t_list **b);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+void		put_list_bonus(t_list **s, int argc, char **argv);
 
 #	endif

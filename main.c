@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:42:25 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/08 01:24:14 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:33:41 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	call_case(t_list **a, t_list **b, int argc)
 		alg_5(a, b);
 	if (argc > 6 && argc < 501)
 		alg_100(a, b);
+	if (argc >= 501)
+		alg_500(a, b);
 }	
 
 int main(int argc, char **argv)
