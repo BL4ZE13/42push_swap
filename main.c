@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:42:25 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/09 13:33:41 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:51:05 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,35 +37,38 @@ void	call_case(t_list **a, t_list **b, int argc)
 		alg_500(a, b);
 }	
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_list *a;
-	t_list *b;
-	
+	t_list	*a;
+	t_list	*b;
+
 	a = NULL;
 	b = NULL;
 	if (check_all(argc, argv) != 1 || argc < 3)
 		return (0);
 	put_list(&a, argc, argv);
 	get_index(&a);
-	// ft_printf("A: ");
-	// print_lst(&a);
-	// ft_printf("\nB: ");
-	// print_lst(&b);
-	// ft_printf("\n////////////////////////////////\n");
 	call_case(&a, &b, argc);
-	// ft_printf("////////////////////////////////\n");
-	// ft_printf("A: ");
-	// print_lst(&a);
-	// ft_printf("\nB: ");
-	// print_lst(&b);
-	// ft_printf("\n");
-	// ft_printf("Is sorted: ");
-	// if (is_sort(&a))
-	// 	ft_printf("OK\n");
-	// else
-	// 	ft_printf("KO\n");
 	ft_lstclear(&a);
 	ft_lstclear(&b);
 }
 
+/*
+	ft_printf("A: ");
+	print_lst(&a);
+	ft_printf("\nB: ");
+	print_lst(&b);
+	ft_printf("\n////////////////////////////////\n");
+
+	ft_printf("////////////////////////////////\n");
+	ft_printf("A: ");
+	print_lst(&a);
+	ft_printf("\nB: ");
+	print_lst(&b);
+	ft_printf("\n");
+	ft_printf("Is sorted: ");
+	if (is_sort(&a))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+*/

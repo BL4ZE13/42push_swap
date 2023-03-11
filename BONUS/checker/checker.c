@@ -1,75 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checkerr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmiguel- <tmiguel-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 10:20:03 by tmiguel-          #+#    #+#             */
-/*   Updated: 2023/03/01 10:20:03 by tmiguel-         ###   ########.fr       */
+/*   Created: 2023/03/11 16:40:28 by diomarti          #+#    #+#             */
+/*   Updated: 2023/03/11 16:40:28 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-static int	check_moves(char *moves)
+void	result_line(char *line, t_list **a, t_list **b)
 {
-	int c;
-
-	if (moves)
-	{
-		c = 0;
-		if (!(ft_strncmp(moves, "pa\n", 3)) || !(ft_strncmp(moves, "pb\n", 3)))
-			c += 1;
-		if (!(ft_strncmp(moves, "rra\n", 4)) || !(ft_strncmp(moves, "rrb\n", 4))
-			|| !(ft_strncmp(moves, "rrr\n", 4)))
-			c += 2;
-		if (!(ft_strncmp(moves, "ra\n", 3)) || !(ft_strncmp(moves, "rb\n", 3))
-			|| !(ft_strncmp(moves, "rr\n", 3)))
-			c += 3;
-		if (!(ft_strncmp(moves, "sa\n", 3)) || !(ft_strncmp(moves, "sb\n", 3))
-			|| !(ft_strncmp(moves, "ss\n", 3)))
-			c += 4;
-		else
-			exit(write(2, "Error\n", 6));
-		return (c);
-	}
-	return (5);
-}
-
-static void do_moves(char *moves, t_list **a, t_list **b)
-{
-	int	c;
-
-	c = check_moves(moves);
-	if (c == 1)
-		check_push(moves, a, b);
-	if (c == 2)
-		check_rev(moves, a, b);
-	if (c == 3)
-		check_rot(moves, a, b);
-	if (c == 4)
-		check_swap(moves, a, b);
-}
-
-void	read_line(char *moves, t_list **a, t_list **b)
-{
-	moves = get_next_line(0);
-	while (moves)
-	{
-		if (moves[0] == '\n')
-		{
-			free(moves);
-			exit(write(2, "Error\n", 6));
-		}
-		do_moves(moves, a, b);
-		free(moves);
-		moves = get_next_line(0);
-	}
-	if (is_sort(a) == 1 && ft_lstsize(*b) == 0)
-		ft_printf("OK\n");
+	if (!ft_strncmp(line, "sa\n", 3) || !ft_strncmp(line, "sb\n", 3) ||
+		!ft_strncmp(line, "ss\n", 3))
+		check_swap(line, a, b);
+	else if (!ft_strncmp(line, "pa\n", 3) || !ft_strncmp(line, "pb\n", 3))
+		check_push(line, a, b);
+	else if (!ft_strncmp(line, "rra\n", 4) || !ft_strncmp(line, "rrb\n", 4) ||
+		!ft_strncmp(line, "rrr\n", 4))
+		check_rev(line, a, b);
+	else if (!ft_strncmp(line, "ra\n", 3) || !ft_strncmp(line, "rb\n", 3) ||
+		!ft_strncmp(line, "rr\n", 3))
+		check_rot(line, a, b);
 	else
-		ft_printf("KO\n");
+		exit(write(2, "Error\n", 6));
 }
 
 void	put_list_bonus(t_list **s, int argc, char **argv)
@@ -81,11 +38,31 @@ void	put_list_bonus(t_list **s, int argc, char **argv)
 		ft_lstadd_back(s, ft_lstnew(ft_atoi(argv[i])));
 }
 
+void	read_line(char *line, t_list **a, t_list **b)
+{
+	line = get_next_line(0);
+	while (line)
+	{
+		if (line[0] == '\n')
+		{
+			free(line);
+			exit(write(2, "Error\n", 6));
+		}
+		result_line(line, a, b);
+		free(line);
+		line = get_next_line(0);
+	}
+	if (is_sort(a) && ft_lstsize(*b) == 0)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
-	char	*moves;
+	char	*line;
 
 	if (argc == 1 || ft_strlen(argv[1]) == 0)
 		return (0);
@@ -93,9 +70,9 @@ int	main(int argc, char **argv)
 		exit(write(2, "Error\n", 6));
 	a = NULL;
 	b = NULL;
-	moves = NULL;
+	line = NULL;
 	put_list_bonus(&a, argc, argv);
-	read_line(moves, &a, &b);
+	read_line(line, &a, &b);
 	ft_lstclear(&a);
 	ft_lstclear(&b);
 	return (0);

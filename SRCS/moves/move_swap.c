@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:29:00 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/01 15:37:20 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:22:01 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	m_swap(t_list **s, int i)
 		ft_printf("sb\n");
 }
 
-void	m_ss(t_list **la, t_list **lb, int i)
+void	m_ss(t_list **a, t_list **b, int i)
 {
-	m_swap(la, 2);
-	m_swap(lb, 2);
+	m_swap(a, 2);
+	m_swap(b, 2);
 	if (i == 2)
 		ft_printf("ss\n");
 }
