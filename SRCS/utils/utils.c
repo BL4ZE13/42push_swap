@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 11:47:23 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/08 01:32:36 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:43:42 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	get_index(t_list **a)
 {
-	t_list *cursor;
-	t_list *tmp;
-	
+	t_list	*cursor;
+	t_list	*tmp;
+
 	cursor = *a;
 	while (cursor)
 	{
@@ -24,7 +24,7 @@ void	get_index(t_list **a)
 		tmp = *a;
 		while (tmp)
 		{
-			if(cursor != tmp && cursor->content > tmp->content)
+			if (cursor != tmp && cursor->content > tmp->content)
 				cursor->index++;
 			tmp = tmp->next;
 		}
@@ -47,7 +47,7 @@ int	put_in_a(t_list **a, t_list **b, int *big, int index)
 	}
 	else if (index == 2 && (check_index(b, ((*big) - 1)) == 0))
 	{
-		m_push(b ,a, 0);
+		m_push(b, a, 0);
 		(*big)--;
 		m_rotate(b, 1);
 		m_push(b, a, 0);

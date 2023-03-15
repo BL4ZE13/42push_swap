@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:28:07 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/02 16:14:55 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:49:28 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	m_rev_rotate(t_list **s, int i)
 {
-	t_list *cursor;
-	t_list *tmp;
+	t_list	*cursor;
+	t_list	*tmp;
 
 	cursor = ft_lstlast(*s);
 	cursor->next = *s;

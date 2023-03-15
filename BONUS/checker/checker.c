@@ -14,16 +14,16 @@
 
 void	result_line(char *line, t_list **a, t_list **b)
 {
-	if (!ft_strncmp(line, "sa\n", 3) || !ft_strncmp(line, "sb\n", 3) ||
-		!ft_strncmp(line, "ss\n", 3))
+	if (!ft_strncmp(line, "sa\n", 3) || !ft_strncmp(line, "sb\n", 3)
+		|| !ft_strncmp(line, "ss\n", 3))
 		check_swap(line, a, b);
 	else if (!ft_strncmp(line, "pa\n", 3) || !ft_strncmp(line, "pb\n", 3))
 		check_push(line, a, b);
-	else if (!ft_strncmp(line, "rra\n", 4) || !ft_strncmp(line, "rrb\n", 4) ||
-		!ft_strncmp(line, "rrr\n", 4))
+	else if (!ft_strncmp(line, "rra\n", 4) || !ft_strncmp(line, "rrb\n", 4)
+		|| !ft_strncmp(line, "rrr\n", 4))
 		check_rev(line, a, b);
-	else if (!ft_strncmp(line, "ra\n", 3) || !ft_strncmp(line, "rb\n", 3) ||
-		!ft_strncmp(line, "rr\n", 3))
+	else if (!ft_strncmp(line, "ra\n", 3) || !ft_strncmp(line, "rb\n", 3)
+		|| !ft_strncmp(line, "rr\n", 3))
 		check_rot(line, a, b);
 	else
 		exit(write(2, "Error\n", 6));

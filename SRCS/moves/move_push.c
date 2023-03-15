@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:28:28 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/01 17:19:48 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:49:55 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 void	m_push(t_list **src, t_list **dest, int i)
 {
-	t_list *cursor_src;
-	t_list *cursor_dest;
-	t_list *tmp;
-	
+	t_list	*cursor_src;
+	t_list	*cursor_dest;
+	t_list	*tmp;
+
 	cursor_src = *src;
 	if (!*dest)
 	{
@@ -33,7 +33,7 @@ void	m_push(t_list **src, t_list **dest, int i)
 		*dest = *src;
 		cursor_dest = *dest;
 		*src = cursor_src->next;
-		cursor_dest->next = tmp; 
+		cursor_dest->next = tmp;
 	}
 	if (i == 0)
 		ft_printf("pa\n");

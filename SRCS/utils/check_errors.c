@@ -6,17 +6,17 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 18:20:56 by diomari           #+#    #+#             */
-/*   Updated: 2023/03/02 13:26:04 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:45:56 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int check_dup(int argc, char **argv)
+int	check_dup(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	
+
 	i = 1;
 	while (i < argc)
 	{
@@ -25,7 +25,7 @@ int check_dup(int argc, char **argv)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
 				return (0);
-			j++;			
+			j++;
 		}
 		i++;
 	}
@@ -41,7 +41,7 @@ int	check_valid(int argc, char **argv)
 	{
 		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
 			exit(write(2, "Error\n", 6));
-		i++;		
+		i++;
 	}
 	return (1);
 }
@@ -60,7 +60,7 @@ int	check_signal(int argc, char **argv)
 			if (!((ft_isdigit(argv[i][j]))
 				|| (argv[i][0] == '-' && ft_isdigit(argv[i][1]))))
 				exit(write(2, "Error\n", 6));
-			j++;			
+			j++;
 		}
 		i++;
 	}
@@ -75,5 +75,5 @@ int	check_all(int argc, char **argv)
 		exit(write(2, "Error\n", 6));
 	if (check_signal(argc, argv) != 1)
 		exit(write(2, "Error\n", 6));
-	return (1);	
+	return (1);
 }

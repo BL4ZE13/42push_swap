@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 16:29:00 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/11 16:22:01 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:49:39 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	m_swap(t_list **s, int i)
 {
-	t_list *cursor;
-	t_list *tmp;
+	t_list	*cursor;
+	t_list	*tmp;
 
 	cursor = *s;
 	tmp = cursor->next->next;

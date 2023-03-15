@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 13:02:22 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/08 16:55:09 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:47:00 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	is_sort(t_list **a)
 {
 	t_list	*cursor;
-	
+
 	cursor = *a;
 	while (cursor->next)
 	{
@@ -31,7 +31,7 @@ int	find_smaller(t_list **a)
 	t_list	*cursor;
 	t_list	*small;
 	int		c;
-	
+
 	cursor = *a;
 	small = *a;
 	c = 0;
@@ -78,7 +78,7 @@ void	do_push(t_list **a, t_list **b, int c, int n)
 void	alg_5(t_list **a, t_list **b)
 {
 	t_list	*cursor;
-	int	c;
+	int		c;
 
 	cursor = *a;
 	if (ft_lstsize(cursor) == 5)

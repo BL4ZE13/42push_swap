@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:49:39 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/07 12:49:39 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:48:21 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	top_to_lst(t_list **s, int i, int o)
 		m_rev_rotate(s, o);
 }
 
-int check_index(t_list **lst, int i)
+int	check_index(t_list **lst, int i)
 {
-	t_list *cursor;
-	int c;
-	int trigger;
+	t_list	*cursor;
+	int		c;
+	int		trigger;
 
 	c = 0;
 	trigger = -1;
@@ -48,8 +48,8 @@ int check_index(t_list **lst, int i)
 
 int	check_big_index(t_list **lst)
 {
-	t_list *cursor;
-	int big;
+	t_list	*cursor;
+	int		big;
 
 	cursor = *lst;
 	big = cursor->index;
@@ -65,7 +65,7 @@ int	check_big_index(t_list **lst)
 void	put_in_b(t_list **a, t_list **b, int size)
 {
 	int	chunk;
-	int c;
+	int	c;
 
 	chunk = 30;
 	c = 0;
@@ -90,8 +90,8 @@ void	put_in_b(t_list **a, t_list **b, int size)
 
 void	alg_100(t_list **a, t_list **b)
 {
-	int big;
-	int index;
+	int	big;
+	int	index;
 
 	put_in_b(a, b, ft_lstsize(*a));
 	big = check_big_index(b);
@@ -100,5 +100,4 @@ void	alg_100(t_list **a, t_list **b)
 		index = put_in_a(a, b, &big, index);
 	if ((*b) == NULL && (*a)->content > (*a)->next->content)
 		m_swap(a, 0);
-
 }

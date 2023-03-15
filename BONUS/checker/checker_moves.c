@@ -17,10 +17,10 @@ void	check_push(char *line, t_list **a, t_list **b)
 	if (!(ft_strncmp(line, "pb\n", 3)))
 		m_push(a, b, 3);
 	else
-		m_push(b, a, 3);	
+		m_push(b, a, 3);
 }
 
-void check_rot(char *line, t_list **a, t_list **b)
+void	check_rot(char *line, t_list **a, t_list **b)
 {
 	if (!ft_strncmp(line, "ra\n", 3))
 		m_rotate(a, 3);

@@ -6,16 +6,16 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 11:34:07 by diomarti          #+#    #+#             */
-/*   Updated: 2023/03/09 11:34:07 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:48:58 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int check_pos(t_list **b, int big, int size)
+int	check_pos(t_list **b, int big, int size)
 {
-	int i;
-	t_list *cursor;
+	int		i;
+	t_list	*cursor;
 
 	i = 0;
 	cursor = *b;
@@ -36,11 +36,11 @@ void	sort_to_a(t_list **a, t_list **b)
 	{
 		if (!(*b))
 			break ;
-		if ((*b)->index != check_big_index(b) && 
-			!check_pos(b, check_big_index(b), ft_lstsize(*b)))
+		if ((*b)->index != check_big_index(b)
+			&& !check_pos(b, check_big_index(b), ft_lstsize(*b)))
 			m_rotate(b, 1);
-		else if ((*b)->index != check_big_index(b) &&
-			check_pos(b, check_big_index(b), ft_lstsize(*b)))
+		else if ((*b)->index != check_big_index(b)
+			&& check_pos(b, check_big_index(b), ft_lstsize(*b)))
 			m_rev_rotate(b, 1);
 		else if ((*b)->index == check_big_index(b))
 			m_push(b, a, 0);
@@ -49,7 +49,7 @@ void	sort_to_a(t_list **a, t_list **b)
 
 void	alg_500(t_list **a, t_list **b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*a)

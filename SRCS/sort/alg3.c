@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 19:21:31 by diomarti          #+#    #+#             */
-/*   Updated: 2023/02/08 16:09:40 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:47:57 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_case(t_list *s)
 void	alg_3(t_list **a)
 {
 	t_list	*cursor;
-	int	c;
+	int		c;
 
 	cursor = *a;
 	c = ft_case(cursor);
