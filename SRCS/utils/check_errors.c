@@ -6,7 +6,7 @@
 /*   By: diomarti <diomarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 18:20:56 by diomari           #+#    #+#             */
-/*   Updated: 2023/03/15 14:45:56 by diomarti         ###   ########.fr       */
+/*   Updated: 2023/03/24 11:58:57 by diomarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,15 @@ int	check_signal(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][0] == '-')
+		{
+			j++;
+			if (!ft_isdigit(argv[i][j]) || argv[i][j] == '0')
+				exit(write(2, "Error\n", 6));
+		}
 		while (argv[i][j])
 		{
-			if (!((ft_isdigit(argv[i][j]))
-				|| (argv[i][0] == '-' && ft_isdigit(argv[i][1]))))
+			if (!(ft_isdigit(argv[i][j])))
 				exit(write(2, "Error\n", 6));
 			j++;
 		}
